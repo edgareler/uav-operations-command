@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>C4ISR - Comando de Operações de UAV</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,500,700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="http://c4isr.edgar.systems/img/favicon.png" />
+        <link href="../../Build/Cesium/Widgets/widgets.css" rel="stylesheet" type="text/css" />
+        <link href="css/hint.min.css" rel="stylesheet" />
+        <link href="css/uav.css" rel="stylesheet" type="text/css" />
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAXBujDguzuwC5XMFKtfMLShk6xgSG06v4&sensor=false"></script>
+        <script src="../../Build/Cesium/Cesium.js"></script>
+        <script src="js/uav.js"></script>
+        <!--[if gte IE 9]>
+        <style type="text/css">
+            .gradient {
+                filter: none;
+            }
+        </style>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="splash" class="full">
+            <div>
+                <img src="img/logo.png" alt="C4ISR" />
+                COMANDO DE OPERAÇÕES DE UAV
+                <div id="btStart">
+                    <span>Iniciar</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tela01" class="full">
+            <div id="titleMissao" class="titleFull">
+                MISSÃO: REALIZAR LEVANTAMENTO DE AMEAÇAS E ÁREAS SEGURAS
+            </div>
+            <div id="descMissao">
+                Como Analista de Inteligência, seu objetivo é utilizar os equipamentos embarcados na aeronave General Atomics MQ-1B Predator para realizar o trabalho de levantamento
+                das ameaças e áreas seguras, para que a equipe em terra cumpra sua missão com a maior consciência situacional possível neste Teatro de Operações.
+            </div>
+        </div>
+        
+        <div id="tela02" class="full">
+            <div id="title02" class="titleFull">
+                GENERAL ATOMICS MQ-1B PREDATOR
+            </div>
+            <img src="img/predator.png" alt="General Atomics MQ-1B Predator" />
+        </div>
+        
+        <div id="tela03" class="full">
+            <div id="title03" class="titleFull">
+                Ao jogar, clique em um item do menu acima para adicionar marcações. Após isto, selecione a cor desejada, e clique em algum ponto no mapa ou na câmera do UAV.
+            </div>
+        </div>
+        
+        <div id="tela04" class="full">
+            <div id="title04" class="titleFull">
+                Para navegar no mapa ou na câmera do UAV, basta clicar e arrastar as telas com o mouse. O zoom é controlado pelo movimento de scroll do mouse.
+            </div>
+        </div>
+
+        <div class="estrutura bg-black">
+            <div class="row blank-50h">
+            </div>
+            <div class="row content">
+                <div class="cell blank-50w">
+                </div>
+
+                <div class="cell map">
+                    <div id="uav_map_canvas"></div>
+                </div>
+
+                <div class="cell blank-100w panel">
+                    <div id="btnUAV"><span class="hint--bottom" data-hint="Exibir HUD do UAV"><img src="img/uav.png" alt="UAV" /></span></div>
+                    <div id="btnUnit"><span class="hint--bottom" data-hint="Adicionar Unidade"><img src="img/unit.png" alt="Adicionar Unidade" /></span></div>
+                    <div id="btnCircle"><span class="hint--bottom" data-hint="Adicionar Área Circular"><img src="img/circle.png" alt="Adicionar Área Circular" /></span></div>
+                    <div id="btnPolyline"><span class="hint--bottom" data-hint="Demarcar Linhas"><img src="img/points.png" alt="Demarcar Linhas" /></span></div>
+                    <div id="btnPolygon"><span class="hint--bottom" data-hint="Demarcar Perímetro"><img src="img/polygon.png" alt="Demarcar Perímetro" /></span></div>
+                </div>
+
+                <div class="cell map">
+                    <div id="controle_map_canvas"></div>
+
+                    <div id="colors">
+                        <div id="btnRed" data-bind="red" class="bg-red"></div>
+                        <div id="btnGreen" data-bind="lime" class="bg-green"></div>
+                        <div id="btnBlue" data-bind="blue" class="bg-blue"></div>
+                        <div id="btnYellow" data-bind="yellow" class="bg-yellow"></div>
+                        <div id="btnBlack" data-bind="black" class="bg-black"></div>
+                        <div id="btnWhite" data-bind="white" class="bg-white"></div>
+                    </div>
+                </div>
+
+                <div class="cell blank-50w">
+
+                </div>
+            </div>
+            <div class="row blank-100h">
+            </div>
+        </div>
+
+        <div class="estrutura footer blank-100h">
+            <div class="cell w50">
+                MQ-1B PREDATOR
+            </div>
+            <div class="cell w50">
+                CONTROLE
+            </div>
+        </div>
+    </body>
+</html>
